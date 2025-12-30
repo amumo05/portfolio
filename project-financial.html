@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Company Profits – Financial Statement Analysis</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="header">
+  <div class="logo">Amala Mohan</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+  </nav>
+</header>
+
+<section class="section">
+  <h1>Company Profits – Financial Statement Analysis</h1>
+
+  <p><strong>Tools:</strong> Python, Matplotlib, Structured Data Definitions</p>
+
+  <h2>Overview</h2>
+  <p>
+    This project analyzes the financial statements of major companies to understand
+    long-term profitability trends. The goal was to visualize how net profit margins
+    evolve over time and identify patterns of growth, stability, or decline using
+    structured data and clear visual representations.
+  </p>
+
+  <h2>Visuals</h2>
+  <img 
+    src="https://i.postimg.cc/MpvfwxH8/download.jpg"
+    alt="Net profit margin trend over time with moving average"
+    style="max-width:100%; border-radius:10px; margin:1rem 0;"
+  />
+
+  <h2>Detailed Explanation</h2>
+  <p>
+    The dataset consists of financial records for multiple companies across several
+    years. Each record includes the year, company name, sector, market capitalization,
+    revenue, and net profit margin. These structured fields allow the program to perform
+    meaningful time-series analysis.
+  </p>
+
+  <p>
+    Using Python, the data is processed through a main analysis function that computes
+    net profit margins and applies a three-year moving average to smooth short-term
+    fluctuations. The results are then visualized using Matplotlib to highlight overall
+    profitability trends and long-term growth behavior.
+  </p>
+
+  <h2>Code Showcase</h2>
+  <pre><code>
+# Example data structure used in the project
+
+def analyze(loc:CompanyRecordList, company: str) -> Produced:
+    """
+    Selects only the chosen company's rows,
+    sorts them by year,
+    computes NPM series, YoY changes,
+    moving average, CAGR, and correlation.
+    Returns a Produced.
+    """
+    #return [] #stub 
+    #template is based on CompanyRecordList and an additional parameter company
+    #filtered stores the produced List
+    
+    filtered = []
+    for cr in loc:
+        if cr.company == company:
+            filtered = filtered + [cr]
+
+    #helper functions 
+    sorted_list = sort_by_year(filtered)
+    years = extract_years(sorted_list)
+    npm = extract_npm(sorted_list)
+    yoy = compute_yoy(npm)
+    ma3 = moving_average_3(npm)
+    cagr = compute_cagr(sorted_list)
+    corr = pearson_corr(sorted_list)
+
+    return Produced(years, npm, yoy, ma3, cagr, corr)
+
+  </code></pre>
+
+  <h2>What I Learned</h2>
+  <p>
+    This project helped me strengthen my understanding of structured data modeling
+    and time-series analysis. I learned how to design clear data definitions that make
+    analysis and visualization more reliable and meaningful.
+  </p>
+
+  <p>
+    I also improved my ability to interpret financial metrics, recognize long-term
+    trends, and communicate insights visually using clean and readable plots.
+  </p>
+
+  <a href="projects.html" class="btn">Back to Projects</a>
+</section>
+
+<footer class="footer">
+  © 2025 Amala Mohan
+</footer>
+
+</body>
+</html>

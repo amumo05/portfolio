@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Comparative Stock Performance Analysis</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="header">
+  <div class="logo">Amala Mohan</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+  </nav>
+</header>
+
+<section class="section">
+  <h1>Comparative Stock Performance Analysis</h1>
+
+  <p><strong>Tools:</strong> Python, Data Analysis, CSV Processing, Matplotlib</p>
+
+  <h2>Overview</h2>
+  <p>
+    This project focuses on understanding why certain companies outperformed others 
+    within the same year. By analyzing post-pandemic stock data, I compared multiple 
+    companies using structured metrics to identify growth patterns, earnings performance, 
+    and overall market strength.
+  </p>
+
+  <h2>Visuals</h2>
+  <img 
+    src="https://i.postimg.cc/N0vsnwrm/3894ca49-c725-41c2-a6ff-a812fd7c72e9.png" 
+    alt="Comparative stock performance visualization across companies"
+    style="max-width:100%; border-radius:10px; margin:1rem 0;"
+  />
+
+  <h2>Detailed Explanation</h2>
+  <p>
+    The project reads stock data from a CSV file and stores each record in a structured
+    <code>StockRecord</code> data definition. I selected a predefined set of companies
+    and analyzed their performance within the same time period to ensure a fair comparison.
+  </p>
+
+  <p>
+    For each company, the program computes a growth score based on price changes and
+    earnings performance. These scores are then used to generate both a textual summary
+    and supporting visualizations, allowing for a clear comparison of why one company
+    outperformed another.
+  </p>
+
+  <h2>Code Showcase</h2>
+  <pre><code>
+# Example structure used in the project
+def analyze_company(records: StockRecordList, company: str) -> CompanyComparison:
+    """
+    Computes average metrics and key indicators for a single company.
+    """
+    company_records = records_for_company(records, company)
+    if not company_records:
+        return None  # No data for this company
+
+    avg_price = sum(r.avg_price_change for r in company_records) / len(company_records)
+    avg_earnings = sum(r.earnings_growth for r in company_records) / len(company_records)
+    avg_growth = sum(r.growth_score for r in company_records) / len(company_records)
+
+    # Dominant sentiment
+    sentiment_count = Counter(r.market_sentiment for r in company_records)
+    dominant_sentiment = sentiment_count.most_common(1)[0][0]
+
+    # Combine growth indicators
+    indicators = []
+    for r in company_records:
+        indicators.extend(r.growth_indicators)
+    indicators = list(set(indicators))  # remove duplicates
+
+    return CompanyComparison(
+        company_name=company,
+        avg_price_change=avg_price,
+        avg_earnings_growth=avg_earnings,
+        avg_growth_score=avg_growth,
+        dominant_sentiment=dominant_sentiment,
+        key_growth_indicators=indicators
+    )
+
+  </code></pre>
+
+  <h2>What I Learned</h2>
+  <p>
+    This project strengthened my ability to work with structured datasets and compare
+    multiple entities using consistent metrics. I learned how small differences in
+    earnings and price trends can significantly affect overall performance rankings.
+  </p>
+
+  <p>
+    It also improved my confidence in designing fair comparison logic and using data
+    visualizations to support analytical conclusions.
+  </p>
+
+  <a href="projects.html" class="btn">Back to Projects</a>
+</section>
+
+<footer class="footer">
+  © 2025 Amala Mohan
+</footer>
+
+</body>
+</html>

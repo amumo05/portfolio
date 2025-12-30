@@ -1,0 +1,281 @@
+/* =========================
+   THEME VARIABLES
+========================= */
+
+:root {
+  --bg: #ffffff;
+  --text: #1f2933;
+  --muted: #6b7280;
+  --card: #f9f9f9;
+  --accent: #007BFF;
+  --border: #e5e7eb;
+  --shadow: 0 18px 30px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="dark"] {
+  --bg: #0f172a;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --card: #1e293b;
+  --accent: #38bdf8;
+  --border: #334155;
+  --shadow: 0 22px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* =========================
+   GLOBAL STYLES
+========================= */
+
+* {
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.25s ease;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(10px);
+}
+
+.header nav a {
+  margin-left: 1.2rem;
+  font-weight: 500;
+}
+
+.header nav a:hover {
+  color: var(--accent);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.profile-pic {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.hero h1 {
+  font-size: 2.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.tagline {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.hero p {
+  max-width: 700px;
+  margin: 1rem auto;
+  color: var(--muted);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn {
+  display: inline-block;
+  margin: 0.5rem;
+  padding: 0.75rem 1.6rem;
+  background: var(--accent);
+  color: white;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.btn.secondary {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section {
+  padding: 3.5rem 2rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--accent);
+}
+
+.section p {
+  color: var(--muted);
+}
+
+/* =========================
+   PROJECTS GRID
+========================= */
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* =========================
+   PROJECT CARD
+========================= */
+
+.project-card {
+  background: var(--card);
+  padding: 2rem;
+  border-radius: 18px;
+  color: var(--text);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 45px rgba(0, 0, 0, 0.15);
+}
+
+.project-card h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.project-card p {
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+/* =========================
+   TAGS
+========================= */
+
+.tags {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.tags span {
+  background: var(--accent);
+  color: white;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.75rem;
+  border-radius: 999px;
+  font-weight: 500;
+}
+
+/* =========================
+   IMAGES (PROJECT PAGES)
+========================= */
+
+.section img {
+  width: 100%;
+  border-radius: 14px;
+  margin: 1.5rem 0;
+  box-shadow: var(--shadow);
+}
+
+/* =========================
+   CODE BLOCKS
+========================= */
+
+pre {
+  background: #1e1e1e;
+  color: #eaeaea;
+  padding: 1.2rem;
+  border-radius: 12px;
+  overflow-x: auto;
+  font-size: 0.9rem;
+  border-left: 4px solid var(--accent);
+}
+
+code {
+  font-family: "Courier New", monospace;
+}
+
+/* =========================
+   CONTACT FORM
+========================= */
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.7rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+  background: linear-gradient(to right, #f9f9f9, #f1f1f1);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .section {
+    padding: 2.5rem 1.4rem;
+  }
+}

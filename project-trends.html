@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stock Trend Analysis (2020–2025)</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="header">
+  <div class="logo">Amala Mohan</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+  </nav>
+</header>
+
+<section class="section">
+  <h1>Stock Trend Analysis (2020–2025)</h1>
+
+  <p><strong>Tools:</strong> Python, Data Analysis, Matplotlib, CSV Processing</p>
+
+  <h2>Overview</h2>
+  <p>
+    This project analyzes stock market trends from 2020 to 2025, a period marked by
+    significant economic disruption and recovery. The goal was to study how different
+    companies responded to market volatility and external events by combining numerical
+    analysis with real-world market context.
+  </p>
+
+  <h2>Visuals</h2>
+
+  <img 
+    src="https://i.postimg.cc/1t6YYL6k/c9dde76e-ebb3-4d46-8b06-ea91d461e54b.png"
+    alt="Stock price trends over time"
+    style="max-width:100%; border-radius:10px; margin:1rem 0;"
+  />
+
+  <img 
+    src="https://i.postimg.cc/266SQ7ZF/2f034370-3ef2-4f2e-ae9e-a07b8d5ae384.png"
+    alt="Growth score trends over time"
+    style="max-width:100%; border-radius:10px; margin:1rem 0;"
+  />
+
+  <img 
+    src="https://i.postimg.cc/tgG6Nwq8/706d5f6e-1691-41a6-8d75-bad8fc62c665.png"
+    alt="Growth score comparison across companies"
+    style="max-width:100%; border-radius:10px; margin:1rem 0;"
+  />
+
+  <h2>Detailed Explanation</h2>
+  <p>
+    The analysis uses stock data collected across multiple years and companies, focusing
+    on key indicators such as average price change, earnings growth, and overall growth
+    scores. Each company’s yearly performance is evaluated independently and then compared
+    across the same time periods.
+  </p>
+
+  <p>
+    Beyond numerical trends, this project incorporates qualitative market context such as
+    post-pandemic recovery, investor sentiment, and macroeconomic conditions. This
+    approach allowed me to interpret not only <em>what</em> the trends were, but also
+    <em>why</em> certain patterns emerged.
+  </p>
+
+  <p>
+    The resulting visualizations highlight long-term trajectories, periods of volatility,
+    and cross-company differences, providing a clearer understanding of how external
+    factors influence market performance.
+  </p>
+
+  <h2>Code Showcase</h2>
+  <pre><code>
+# Example logic used to compute yearly growth scores
+   def analyze_price_trend_with_interpretation(records: StockRecordList, company: str) -> None:
+    """
+    Analyzes price trend, prints interpretation, and plots the result.
+    """
+    analysis = build_price_trend_analysis(records, company)
+    explanation = interpret_price_trend(analysis)
+
+    print("Price Trend Interpretation:")
+    print(explanation)
+
+    plot_price_trend(analysis)
+ </code></pre>
+
+  <h2>What I Learned</h2>
+  <p>
+    This project significantly improved my ability to work with time-series data and
+    compare trends across multiple dimensions. I learned how to design metrics that
+    balance different indicators and how to interpret results within a broader economic
+    context.
+  </p>
+
+  <p>
+    I also gained confidence in translating complex datasets into clear visual stories
+    and strengthened my analytical thinking by connecting data-driven results to
+    real-world events.
+  </p>
+
+  <a href="projects.html" class="btn">Back to Projects</a>
+</section>
+
+<footer class="footer">
+  © 2025 Amala Mohan
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Amala Mohan | Portfolio</title>
+<link rel="stylesheet" href="style.css" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+
+<header class="header">
+  <div class="logo">Amala Mohan</div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="projects.html">More About My Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+
+    <!-- Dark / Light Mode Button -->
+    <button id="theme-toggle" class="btn secondary">🌙</button>
+  </nav>
+</header>
+
+
+<section id="home" class="hero">
+<img src="https://i.postimg.cc/c4PbPNsr/me.jpg" alt="Amala Mohan" class="profile-pic" />
+<h1>Amala Mohan</h1>
+<p class="tagline">Aspiring Computer Science Major | Problem Solver & Data Enthusiast</p>
+<p class="intro">
+I am a UBC student passionate about computer science and mathematics. I enjoy solving
+incomplete problems like puzzles, learning through mistakes, and growing through
+academic challenges with resilience and curiosity.
+</p>
+<div class="cta-buttons">
+<a href="#portfolio" class="btn">View Projects</a>
+<a href="#contact" class="btn secondary">Contact Me</a>
+</div>
+</section>
+
+
+<section id="about" class="section">
+<h2>About Me</h2>
+<p>
+My academic journey has shaped my resilience, adaptability, and analytical mindset.
+I believe mistakes are essential to growth and that persistence leads to clarity.
+I enjoy collaborating with others, thinking creatively, and tackling problems that
+require structured reasoning.
+</p>
+<ul class="timeline">
+<li><strong>ASC PU College, Bangalore (Grades 11–12)</strong> – Top 1%, 93% average</li>
+<li><strong>S Cadambi Vidhya Kendra (Grades 8–10)</strong> – Straight A’s, ~80%+</li>
+<li><strong>Venus International School (Grades 1–7)</strong></li>
+</ul>
+
+
+<h3>Interests</h3>
+<p>Classical dance, robotics, singing, painting</p>
+</section>
+
+
+<section id="portfolio" class="section">
+<h2>Portfolio</h2>
+<div class="project-grid">
+
+
+<a class="project-card" href="project-financial.html">
+<h3>Company Financial Statement Analysis</h3>
+<p>Analyzing profit margins and trends using structured financial data.</p>
+<span>Python • Matplotlib • Data Analysis</span>
+</a>
+
+
+<a class="project-card" href="project-comparative.html">
+<h3>Comparative Stock Performance</h3>
+<p>Understanding why companies outperform others post-pandemic.</p>
+<span>Python • CSV • Visualization</span>
+</a>
+
+
+<a class="project-card" href="project-trends.html">
+<h3>Stock Trend Analysis (2020–2025)</h3>
+<p>Market recovery and cross-company trend evaluation.</p>
+<span>Python • Data Science • Economics</span>
+</a>
+
+
+</div>
+</section>
+
+
+<section id="skills" class="section">
+<h2>Skills & Expertise</h2>
+<ul class="skills">
+<li>Python, Java, C++, HTML, SQL</li>
+<li>IBM, Stanford, DeepLearning.AI (AI & Data Science)</li>
+<li>Analytical thinking, teamwork, creative problem-solving</li>
+</ul>
+</section>
+
+
+<section id="contact" class="section">
+<h2>Contact</h2>
+<p>Email: <a href="mailto:amohan07@student.ubc.ca">amohan07@student.ubc.ca</a></p>
+<p>Email: <a href="mailto:amuottawa5@gmail.com">amuottawa5@gmail.com</a></p>
+<p>LinkedIn: <a href="https://www.linkedin.com/in/amala-mohan-62586a33b" target="_blank">View Profile</a></p>
+
+
+<form class="contact-form">
+<input type="text" placeholder="Name" required />
+<input type="email" placeholder="Email" required />
+<textarea placeholder="Message" rows="4"></textarea>
+<button type="submit" class="btn">Send</button>
+</form>
+</section>
+
+
+<footer class="footer">© 2025 Amala Mohan</footer>
+
+<script>
+  const toggle = document.getElementById("theme-toggle");
+  const root = document.documentElement;
+
+  toggle.addEventListener("click", () => {
+    const current = root.getAttribute("data-theme");
+    if (current === "dark") {
+      root.removeAttribute("data-theme");
+      toggle.textContent = "🌙";
+    } else {
+      root.setAttribute("data-theme", "dark");
+      toggle.textContent = "☀️";
+    }
+  });
+</script>
+
+
+</body>
+</html>
