@@ -12,7 +12,7 @@
   <div class="logo">Amala Mohan</div>
   <nav>
     <a href="index.html">Home</a>
-    <a href="projects.html">Projects</a>
+    <button id="theme-toggle" class="btn secondary">🌙</button>
   </nav>
 </header>
 
@@ -85,7 +85,8 @@ def analyze_company(records: StockRecordList, company: str) -> CompanyComparison
     )
 
   </code></pre>
-
+   
+  <p>View full code on GitHub: <a href="https://github.com/amumo05/stock-market-analysis-02/blob/main/stock_analysis_second_version.ipynb" target="_blank">click to check the code </a></p>
   <h2>What I Learned</h2>
   <p>
     This project strengthened my ability to work with structured datasets and compare
@@ -98,12 +99,28 @@ def analyze_company(records: StockRecordList, company: str) -> CompanyComparison
     visualizations to support analytical conclusions.
   </p>
 
-  <a href="projects.html" class="btn">Back to Projects</a>
+  <a href="index.html" class="btn">Back to Home</a>
 </section>
 
 <footer class="footer">
   © 2025 Amala Mohan
 </footer>
+
+<script>
+  const toggle = document.getElementById("theme-toggle");
+  const root = document.documentElement;
+
+  toggle.addEventListener("click", () => {
+    const current = root.getAttribute("data-theme");
+    if (current === "dark") {
+      root.removeAttribute("data-theme");
+      toggle.textContent = "🌙";
+    } else {
+      root.setAttribute("data-theme", "dark");
+      toggle.textContent = "☀️";
+    }
+  });
+</script>
 
 </body>
 </html>
