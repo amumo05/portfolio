@@ -12,7 +12,7 @@
   <div class="logo">Amala Mohan</div>
   <nav>
     <a href="index.html">Home</a>
-    <a href="projects.html">Projects</a>
+    <button id="theme-toggle" class="btn secondary">🌙</button>
   </nav>
 </header>
 
@@ -84,7 +84,8 @@ def analyze(loc:CompanyRecordList, company: str) -> Produced:
     return Produced(years, npm, yoy, ma3, cagr, corr)
 
   </code></pre>
-
+   
+  <p>View full code on GitHub: <a href="https://github.com/amumo05/different-company-financial-statements-/blob/main/company%20financial%20statments%20data%20set.ipynb" target="_blank">click to check the code </a></p>
   <h2>What I Learned</h2>
   <p>
     This project helped me strengthen my understanding of structured data modeling
@@ -97,12 +98,31 @@ def analyze(loc:CompanyRecordList, company: str) -> Produced:
     trends, and communicate insights visually using clean and readable plots.
   </p>
 
-  <a href="projects.html" class="btn">Back to Projects</a>
+  <a href="index.html" class="btn">Back to Home</a>
 </section>
+
+
 
 <footer class="footer">
   © 2025 Amala Mohan
 </footer>
 
+<script>
+  const toggle = document.getElementById("theme-toggle");
+  const root = document.documentElement;
+
+  toggle.addEventListener("click", () => {
+    const current = root.getAttribute("data-theme");
+    if (current === "dark") {
+      root.removeAttribute("data-theme");
+      toggle.textContent = "🌙";
+    } else {
+      root.setAttribute("data-theme", "dark");
+      toggle.textContent = "☀️";
+    }
+  });
+</script>
+
 </body>
 </html>
+
